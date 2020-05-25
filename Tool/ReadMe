@@ -1,0 +1,27 @@
+BiRD is built and Tested on :
+Ubuntu 14.04
+Kernel: 3.19 #Kernel over 4 might not support PIN
+Intel PIN's Version:: 2.14
+
+
+1. Set PIN_ROOT to the home directory of PIN or where ninary of PIN is located.
+    export PIN_ROOT=/path/to/pin
+2. Set APP to client application
+    export APP=/path/to/test
+    
+Other files:
+backtrack.out is updated after every successful interleaving explored
+bt contains sequence of all traces explored
+log file contains the log of buggy traces (the results contain the logs for different files)
+endrun is an indicator file to show if all runs have exhausted [After a test program is explored, string "true" is written to it. In order to analyse a different binary, please reset the text to "race"]        
+
+Reset file backtract.out to empty and file endrun to "race" for every test.
+
+Run ./schedule_random.sh
+
+
+[Reset path to endrun in schedule_random.sh]
+
+
+
+Note: If you intend to analyze the binary of one or more libraries, please specify the library name in function "Trace()".
